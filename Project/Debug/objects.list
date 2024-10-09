@@ -1,6 +1,6 @@
 "./Core/Src/button.o"
-"./Core/Src/fsm_automatic.o"
-"./Core/Src/fsm_manual.o"
+"./Core/Src/display7SEG.o"
+"./Core/Src/fsm_traffic_light.o"
 "./Core/Src/global.o"
 "./Core/Src/main.o"
 "./Core/Src/software_timer.o"

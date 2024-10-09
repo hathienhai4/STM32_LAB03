@@ -13,7 +13,7 @@
 #define NORMAL_STATE SET
 #define PRESSED_STATE RESET
 
-int isButton1Pressed();
+int isButtonPressed(int);
 void getKeyInput();
 
 #endif /* INC_BUTTON_H_ */

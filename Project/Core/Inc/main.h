@@ -58,28 +58,58 @@ void Error_Handler(void);
 /* USER CODE END EFP */
 
 /* Private defines -----------------------------------------------------------*/
-#define Button1_Pin GPIO_PIN_13
-#define Button1_GPIO_Port GPIOC
-#define A_Pin GPIO_PIN_1
-#define A_GPIO_Port GPIOA
-#define D1_Pin GPIO_PIN_2
-#define D1_GPIO_Port GPIOA
-#define D0_Pin GPIO_PIN_3
-#define D0_GPIO_Port GPIOA
-#define B_Pin GPIO_PIN_4
-#define B_GPIO_Port GPIOA
+#define MODULE_Pin GPIO_PIN_13
+#define MODULE_GPIO_Port GPIOC
+#define LED_RED_OP_Pin GPIO_PIN_2
+#define LED_RED_OP_GPIO_Port GPIOA
+#define LED_YELLOW_OP_Pin GPIO_PIN_3
+#define LED_YELLOW_OP_GPIO_Port GPIOA
+#define LED_GREEN_OP_Pin GPIO_PIN_4
+#define LED_GREEN_OP_GPIO_Port GPIOA
 #define LED_RED_Pin GPIO_PIN_5
 #define LED_RED_GPIO_Port GPIOA
 #define LED_YELLOW_Pin GPIO_PIN_6
 #define LED_YELLOW_GPIO_Port GPIOA
 #define LED_GREEN_Pin GPIO_PIN_7
 #define LED_GREEN_GPIO_Port GPIOA
+#define a_Pin GPIO_PIN_0
+#define a_GPIO_Port GPIOB
+#define b_Pin GPIO_PIN_1
+#define b_GPIO_Port GPIOB
+#define c_Pin GPIO_PIN_2
+#define c_GPIO_Port GPIOB
+#define d2_Pin GPIO_PIN_10
+#define d2_GPIO_Port GPIOB
+#define e2_Pin GPIO_PIN_11
+#define e2_GPIO_Port GPIOB
+#define f2_Pin GPIO_PIN_12
+#define f2_GPIO_Port GPIOB
+#define g2_Pin GPIO_PIN_13
+#define g2_GPIO_Port GPIOB
+#define TIME_Pin GPIO_PIN_14
+#define TIME_GPIO_Port GPIOB
+#define VALUE_Pin GPIO_PIN_15
+#define VALUE_GPIO_Port GPIOB
+#define EN0_Pin GPIO_PIN_8
+#define EN0_GPIO_Port GPIOA
+#define EN1_Pin GPIO_PIN_9
+#define EN1_GPIO_Port GPIOA
 #define D2_Pin GPIO_PIN_10
 #define D2_GPIO_Port GPIOA
-#define D3_Pin GPIO_PIN_3
-#define D3_GPIO_Port GPIOB
-#define UserButton_Pin GPIO_PIN_6
-#define UserButton_GPIO_Port GPIOB
+#define d_Pin GPIO_PIN_3
+#define d_GPIO_Port GPIOB
+#define e_Pin GPIO_PIN_4
+#define e_GPIO_Port GPIOB
+#define f_Pin GPIO_PIN_5
+#define f_GPIO_Port GPIOB
+#define g_Pin GPIO_PIN_6
+#define g_GPIO_Port GPIOB
+#define a2_Pin GPIO_PIN_7
+#define a2_GPIO_Port GPIOB
+#define b2_Pin GPIO_PIN_8
+#define b2_GPIO_Port GPIOB
+#define c2_Pin GPIO_PIN_9
+#define c2_GPIO_Port GPIOB
 /* USER CODE BEGIN Private defines */
 
 /* USER CODE END Private defines */

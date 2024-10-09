@@ -8,3 +8,9 @@
 #include "global.h"
 
 int status = 0;
+int value = 0;
+int value1 = 1;
+
+int TIME_RED = 5000;
+int TIME_YELLOW = 2000;
+int TIME_GREEN = 3000;
