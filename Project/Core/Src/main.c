@@ -97,14 +97,14 @@ int main(void)
 
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
-  setTimer(1, 50);
-  int status = INIT;
+  setTimer(1, 200);
+  status = INIT;
   while (1)
   {
-	  update7SegBuffer();
+	  updateClockBuffer();
 	  fsm_traffic_light_run();
 	  if (isTimerExpired(1) == 1) {
-		  setTimer(1, 50);
+		  setTimer(1, 200);
 		  update7SEG(index_led++);
 		  if (index_led > 1) {
 			  index_led = 0;
@@ -263,9 +263,7 @@ static void MX_GPIO_Init(void)
 /* USER CODE BEGIN 4 */
 void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim) {
 	timerRun();
-	getKeyInput(0);
-	getKeyInput(1);
-	getKeyInput(2);
+	getKeyInput();
 }
 /* USER CODE END 4 */
 

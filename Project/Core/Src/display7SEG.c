@@ -61,7 +61,7 @@ void display7SEG_2(int num) {
 		break;
 	case 1:
 		HAL_GPIO_WritePin(GPIOB, b2_Pin | c2_Pin, 0);
-		HAL_GPIO_WritePin(GPIOB, a2_Pin | d2_Pin | e_2Pin | f2_Pin | g2_Pin, 1);
+		HAL_GPIO_WritePin(GPIOB, a2_Pin | d2_Pin | e2_Pin | f2_Pin | g2_Pin, 1);
 		break;
 	case 2:
 		HAL_GPIO_WritePin(GPIOB, a2_Pin | b2_Pin | d2_Pin | e2_Pin | g2_Pin, 0);
@@ -98,4 +98,9 @@ void updateClockBuffer() {
     led_buffer[1] = value % 10;
     led_buffer[2] = value1 / 10;
     led_buffer[3] = value1 % 10;
+}
+
+void clearAllClock() {
+	HAL_GPIO_WritePin(GPIOA, GPIO_PIN_All, 1);
+	HAL_GPIO_WritePin(GPIOB, GPIO_PIN_All, 1);
 }
