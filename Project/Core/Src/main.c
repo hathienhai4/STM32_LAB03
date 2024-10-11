@@ -97,19 +97,22 @@ int main(void)
 
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
-  setTimer(1, 200);
+  setTimer(1, 10);
   status = INIT;
   while (1)
   {
 	  updateClockBuffer();
 	  fsm_traffic_light_run();
 	  if (isTimerExpired(1) == 1) {
-		  setTimer(1, 200);
-		  update7SEG(index_led++);
+		  setTimer(1, 100);
+		  update7SEG(index_led);
+		  ++index_led;
 		  if (index_led > 1) {
 			  index_led = 0;
 		  }
 	  }
+
+
     /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */

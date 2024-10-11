@@ -10,8 +10,9 @@
 
 #include "main.h"
 
-#define NORMAL_STATE SET
-#define PRESSED_STATE RESET
+#define NORMAL_STATE 	SET
+#define PRESSED_STATE 	RESET
+#define NUM_BUTTON		3
 
 int isButtonPressed(int);
 void getKeyInput();

@@ -8,7 +8,7 @@
 #include "display7SEG.h"
 
 int index_led = 0;
-int led_buffer[4] = {1, 2, 3, 4};
+int led_buffer[4];
 
 void display7SEG(int num) {
 	switch (num) {
@@ -71,6 +71,28 @@ void display7SEG_2(int num) {
 		HAL_GPIO_WritePin(GPIOB, a2_Pin | b2_Pin | c2_Pin | d2_Pin | g2_Pin, 0);
 		HAL_GPIO_WritePin(GPIOB, e2_Pin | f2_Pin, 1);
 		break;
+	case 4:
+		HAL_GPIO_WritePin(GPIOB, b2_Pin | c2_Pin | f2_Pin | g2_Pin, 0);
+		HAL_GPIO_WritePin(GPIOB, a2_Pin | d2_Pin | e2_Pin, 1);
+		break;
+	case 5:
+		HAL_GPIO_WritePin(GPIOB, a2_Pin | c2_Pin | d2_Pin | f2_Pin | g2_Pin, 0);
+		HAL_GPIO_WritePin(GPIOB, b2_Pin | e2_Pin, 1);
+		break;
+	case 6:
+		HAL_GPIO_WritePin(GPIOB, a2_Pin | c2_Pin | d2_Pin | e2_Pin | f2_Pin | g2_Pin, 0);
+		HAL_GPIO_WritePin(GPIOB, b2_Pin, 1);
+		break;
+	case 7:
+		HAL_GPIO_WritePin(GPIOB, a2_Pin | b2_Pin | c2_Pin, 0);
+		HAL_GPIO_WritePin(GPIOB, d2_Pin | e2_Pin | f2_Pin | g2_Pin, 1);
+	case 8:
+		HAL_GPIO_WritePin(GPIOB, a2_Pin | b2_Pin | c2_Pin | d2_Pin | e2_Pin | f2_Pin | g2_Pin, 0);
+		break;
+	case 9:
+		HAL_GPIO_WritePin(GPIOB, a2_Pin | b2_Pin | c2_Pin | d2_Pin | f2_Pin | g2_Pin, 0);
+		HAL_GPIO_WritePin(GPIOB, e2_Pin, 1);
+		break;
 	}
 }
 
@@ -94,10 +116,10 @@ void update7SEG(int index){
 }
 
 void updateClockBuffer() {
-    led_buffer[0] = value / 10;
-    led_buffer[1] = value % 10;
-    led_buffer[2] = value1 / 10;
-    led_buffer[3] = value1 % 10;
+    led_buffer[0] = value / 1000;
+    led_buffer[1] = (value / 100) % 10;
+    led_buffer[2] = value1 / 1000;
+    led_buffer[3] = (value1 / 100) % 10;
 }
 
 void clearAllClock() {

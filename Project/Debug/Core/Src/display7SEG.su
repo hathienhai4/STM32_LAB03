@@ -1,5 +1,5 @@
 display7SEG.c:13:6:display7SEG	16	static
 display7SEG.c:56:6:display7SEG_2	16	static
-display7SEG.c:77:6:update7SEG	16	static
-display7SEG.c:96:6:updateClockBuffer	4	static
-display7SEG.c:103:6:clearAllClock	8	static
+display7SEG.c:99:6:update7SEG	16	static
+display7SEG.c:118:6:updateClockBuffer	4	static
+display7SEG.c:125:6:clearAllClock	8	static
