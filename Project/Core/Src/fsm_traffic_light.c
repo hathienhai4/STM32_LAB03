@@ -78,7 +78,7 @@ void fsm_traffic_light_run() {
 			setTimer(0, TIME_GREEN);
 		}
 		if (isButtonPressed(0) == 1) {
-			value = 5000 / 10;
+			value = TIME_RED / 10;
 			value1 = 200;
 			status = MOD_RED;
 			clearAllClock();
@@ -91,26 +91,20 @@ void fsm_traffic_light_run() {
 			setTimer(0, 500);
 		}
 		if (isButtonPressed(1) == 1) {
-			if (value > 9900) {
-				value = 0;
-			}
-			else {
-				value += 100;
-			}
+			value = (value > 9900) ? 0 : value + 100;
 		}
-		if (isButtonPressed(2) == 1) {
+		else if (isButtonPressed(2) == 1) {
 			TIME_RED_tmp = value;
 		}
 		else if (isButtonPressed(0) == 1) {
+			status = MOD_AMBER;
+			clearAllClock();
 			value = TIME_YELLOW / 10;
 			value1 = 300;
-			status = MOD_AMBER;
 			setTimer(0, 500);
 		}
 		break;
 	case MOD_AMBER:
-		clearAllClock();
-
 		if (isTimerExpired(0) == 1) {
 			HAL_GPIO_TogglePin(GPIOA, LED_YELLOW_Pin | LED_YELLOW_OP_Pin);
 			setTimer(0, 500);
@@ -123,15 +117,14 @@ void fsm_traffic_light_run() {
 			TIME_AMBER_tmp = value;
 		}
 		else if (isButtonPressed(0) == 1) {
+			status = MOD_GREEN;
+			clearAllClock();
 			value = TIME_GREEN / 10;
 			value1 = 400;
-			status = MOD_GREEN;
 			setTimer(0, 500);
 		}
 		break;
 	case MOD_GREEN:
-		clearAllClock();
-
 		if (isTimerExpired(0) == 1) {
 			HAL_GPIO_TogglePin(GPIOA, LED_GREEN_Pin | LED_GREEN_OP_Pin);
 			setTimer(0, 500);

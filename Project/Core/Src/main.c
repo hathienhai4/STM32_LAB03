@@ -99,6 +99,8 @@ int main(void)
   /* USER CODE BEGIN WHILE */
   setTimer(1, 10);
   status = INIT;
+  value = 10;
+  value1 = 10;
   while (1)
   {
 	  updateClockBuffer();
@@ -111,8 +113,6 @@ int main(void)
 			  index_led = 0;
 		  }
 	  }
-
-
     /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */
