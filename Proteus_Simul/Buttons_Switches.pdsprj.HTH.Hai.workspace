@@ -334,11 +334,11 @@
    </POPUP>
    <POPUP w="600" x="697" flags="0000002a" y="830" h="400" pid="100" iid="1">
     <PROPERTIES>
-     <ITEM name="Breakpoint 0">"",8000544,0000,66D7,7ACD,300232264
+     <ITEM name="Breakpoint 0">"",8000544,0000,3027,7ACD,300232264
 </ITEM>
-     <ITEM name="Breakpoint 1">"",8000564,0000,318E,7ACD,-56342904
+     <ITEM name="Breakpoint 1">"",8000568,0000,318E,7ACD,-56342904
 </ITEM>
-     <ITEM name="Breakpoint 2">"",800057E,0000,0B53,7ACD,1752701632
+     <ITEM name="Breakpoint 2">"",8000582,0000,0B53,7ACD,1752701632
 </ITEM>
      <ITEM name="Breakpoint 3">"",800057E,0000,0B53,7ACD,1752701632
 </ITEM>

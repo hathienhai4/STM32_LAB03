@@ -43,6 +43,7 @@ void display7SEG(int num) {
 	case 7:
 		HAL_GPIO_WritePin(GPIOB, a_Pin | b_Pin | c_Pin, 0);
 		HAL_GPIO_WritePin(GPIOB, d_Pin | e_Pin | f_Pin | g_Pin, 1);
+		break;
 	case 8:
 		HAL_GPIO_WritePin(GPIOB, a_Pin | b_Pin | c_Pin | d_Pin | e_Pin | f_Pin | g_Pin, 0);
 		break;
@@ -86,6 +87,7 @@ void display7SEG_2(int num) {
 	case 7:
 		HAL_GPIO_WritePin(GPIOB, a2_Pin | b2_Pin | c2_Pin, 0);
 		HAL_GPIO_WritePin(GPIOB, d2_Pin | e2_Pin | f2_Pin | g2_Pin, 1);
+		break;
 	case 8:
 		HAL_GPIO_WritePin(GPIOB, a2_Pin | b2_Pin | c2_Pin | d2_Pin | e2_Pin | f2_Pin | g2_Pin, 0);
 		break;
