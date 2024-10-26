@@ -33,6 +33,7 @@ void fsm_traffic_light_run() {
 			value1 = 200;
 			setTimer(0, 500);
 		}
+		else if (isButtonPressed(1) == 1 || isButtonPressed(2) == 1) {}
 		break;
 	case RED_YELLOW:
 		value = timer_counter[0];
@@ -50,6 +51,7 @@ void fsm_traffic_light_run() {
 			value1 = 200;
 			setTimer(0, 500);
 		}
+		else if (isButtonPressed(1) == 1 || isButtonPressed(2) == 1) {}
 		break;
 	case GREEN_RED:
 		value = timer_counter[0];
@@ -67,6 +69,7 @@ void fsm_traffic_light_run() {
 			clearAllClock();
 			setTimer(0, 500);
 		}
+		else if (isButtonPressed(1) == 1 || isButtonPressed(2) == 1) {}
 		break;
 	case YELLOW_RED:
 		value = timer_counter[0];
@@ -84,6 +87,7 @@ void fsm_traffic_light_run() {
 			clearAllClock();
 			setTimer(0, 500);
 		}
+		else if (isButtonPressed(1) == 1 || isButtonPressed(2) == 1) {}
 		break;
 	case MOD_RED:
 		if (isTimerExpired(0) == 1) {
@@ -91,7 +95,7 @@ void fsm_traffic_light_run() {
 			setTimer(0, 500);
 		}
 		if (isButtonPressed(1) == 1) {
-			value = (value > 9900) ? 0 : value + 100;
+			value = (value >= 9900) ? 100 : value + 100;
 		}
 		else if (isButtonPressed(2) == 1) {
 			TIME_RED_tmp = value;
@@ -111,7 +115,7 @@ void fsm_traffic_light_run() {
 		}
 
 		if (isButtonPressed(1) == 1) {
-			value = (value > 9900) ? 0 : value + 100;
+			value = (value >= 9900) ? 100 : value + 100;
 		}
 		else if (isButtonPressed(2) == 1) {
 			TIME_AMBER_tmp = value;
@@ -131,7 +135,7 @@ void fsm_traffic_light_run() {
 		}
 
 		if (isButtonPressed(1) == 1) {
-			value = (value > 9900) ? 0 : value + 100;
+			value = (value >= 9900) ? 100 : value + 100;
 		}
 		else if (isButtonPressed(2) == 1) {
 			TIME_GREEN_tmp = value;

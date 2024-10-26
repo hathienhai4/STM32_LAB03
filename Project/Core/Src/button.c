@@ -5,8 +5,8 @@ int KeyReg1[NUM_BUTTON] = {NORMAL_STATE};
 int KeyReg2[NUM_BUTTON] = {NORMAL_STATE};
 int KeyReg3[NUM_BUTTON] = {NORMAL_STATE};
 
-int TimeOutForKeyPress[NUM_BUTTON] = {200, 200, 200};
-int button1_long_pressed = 0;
+int TimeOutForKeyPress[NUM_BUTTON] = {100, 100, 100};
+int button_long_pressed[10];
 int button_flag[10];
 
 int isButtonPressed(int index){
@@ -17,9 +17,9 @@ int isButtonPressed(int index){
 	return 0;
 }
 
-int isButton1LongPressed(){
-	if(button1_long_pressed == 1){
-		button1_long_pressed = 0;
+int isButtonLongPressed(int index){
+	if(button_long_pressed[index] == 1){
+		button_long_pressed[index] = 0;
 		return 1;
 	}
 	return 0;
@@ -47,14 +47,17 @@ void getKeyInput(){
 			if (KeyReg3[i] != KeyReg2[i]) {
 				KeyReg3[i] = KeyReg2[i];
 				if (KeyReg2[i] == PRESSED_STATE) {
-					TimeOutForKeyPress[i] = 200;
+					TimeOutForKeyPress[i] = 100;
 					button_flag[i] = 1;
 				}
 			}
 			else {
-				TimeOutForKeyPress[i]--;
+				--TimeOutForKeyPress[i];
 				if (TimeOutForKeyPress[i] == 0) {
-					KeyReg3[i] = NORMAL_STATE;
+					if (KeyReg2[i] == PRESSED_STATE) {
+						button_flag[i] = 1;
+					}
+					TimeOutForKeyPress[i] = 25;
 				}
 			}
 		}
